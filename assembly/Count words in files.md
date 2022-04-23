@@ -35,6 +35,8 @@ START:
    mov AX,DATAS
    mov DS,AX
    
+   
+   
    mov DX,OFFSET strFileName  ;文件偏移地址
    mov ax,3dh                 ;打开文件
    int 21h
@@ -47,6 +49,7 @@ START:
    mov si,offset strOpenFailed
    call Wrong ;打印si指向的错误内容
    jmp over
+   
    
    
    ; 以下是创建成功的处理部分
@@ -69,6 +72,8 @@ START:
      call Statistic   ;每一步都会执行
      jmp againRead    ;循环读文件，读取并统计字符 
 ;---------------------------------------------------------------------------
+
+
 
 
 ;文件读取失败
